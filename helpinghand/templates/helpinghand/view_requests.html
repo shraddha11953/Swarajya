@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Help Requests</title>
+</head>
+<body>
+    <h2>All Help Requests</h2>
+    {% for request in requests %}
+        <div style="border: 1px solid #aaa; margin-bottom: 10px; padding: 10px;">
+            {% if request.image %}
+                <img src="{{ request.image.url }}" alt="image" width="200"><br>
+            {% endif %}
+            <strong>{{ request.user.username }}</strong><br>
+            Location: {{ request.location }}<br>
+            Need: {{ request.description }}<br>
+            Posted on: {{ request.created_at }}
+        </div>
+    {% empty %}
+        <p>No help requests found.</p>
+    {% endfor %}
+</body>
+</html>

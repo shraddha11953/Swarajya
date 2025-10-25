@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rape & Harassment Reporting - Swarajya</title>
+    <style>
+        /* Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fff0f0, #ffe6e6);
+            color: #222;
+        }
+
+        /* Navbar */
+        nav {
+            background: #7f1d1d;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 18px;
+            font-weight: 600;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        nav a:hover {
+            color: #fecaca;
+            text-shadow: 0 0 10px #fecaca;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 80px auto;
+            background: #ffffff;
+            padding: 45px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        h1 {
+            color: #991b1b;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #333;
+            font-size: 1.1em;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        /* Safety Message Box */
+        .highlight {
+            background: #fee2e2;
+            border-left: 5px solid #dc2626;
+            padding: 18px 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+            color: #7f1d1d;
+            font-weight: 500;
+            font-size: 1.05em;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #b91c1c, #dc2626);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            margin: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: linear-gradient(90deg, #dc2626, #b91c1c);
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #fff5f5;
+            color: #444;
+            font-size: 0.9em;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="{% url 'rape:submit_rape_report' %}">Report Incident</a>
+        <a href="{% url 'rape:my_rape_reports' %}">My Reports</a>
+        {% if user.is_superuser %}
+            <a href="{% url 'rape:all_rape_reports' %}">All Reports</a>
+        {% endif %}
+    </nav>
+
+    <div class="container">
+        <h1>Rape & Harassment Reporting System</h1>
+
+        <div class="highlight">
+            “You are not alone. You are brave. You deserve justice and healing.  
+             Your voice will be heard — safely and confidentially.”
+        </div>
+
+        <p>This platform is created to support <strong>victims of sexual assault and harassment</strong>.  
+           You can securely report any incident here — your privacy and dignity will always be respected.</p>
+
+        <p>Our team ensures that every report is handled with <strong>care, confidentiality, and compassion</strong>.  
+           Together, we stand against violence and strive for a safer, just society.</p>
+
+        <a href="{% url 'rape:submit_rape_report' %}" class="btn">Report Now</a>
+        <a href="{% url 'rape:my_rape_reports' %}" class="btn">My Reports</a>
+    </div>
+
+    <footer>
+        © 2025 Swarajya | Your Safety. Your Voice. Your Justice. ❤️
+    </footer>
+
+</body>
+</html>

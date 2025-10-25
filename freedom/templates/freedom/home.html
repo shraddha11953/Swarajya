@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freedom Forum - Swarajya</title>
+    <style>
+        /* Base and Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fff7e6, #e6f7ff);
+            color: #222;
+            padding: 0;
+        }
+
+        /* Navbar */
+        nav {
+            background: #0f172a;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+            text-shadow: 0 0 10px #ffcc00;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 70px auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        .container h1 {
+            color: #0f172a;
+            font-size: 2.3em;
+            margin-bottom: 20px;
+        }
+
+        .container p {
+            color: #333;
+            font-size: 1.1em;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #2563eb, #1d4ed8);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            margin: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: linear-gradient(90deg, #1d4ed8, #2563eb);
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #f8fafc;
+            color: #555;
+            font-size: 0.9em;
+            margin-top: 40px;
+        }
+
+        /* Highlight box for message */
+        .highlight {
+            background: #e0f2fe;
+            border-left: 5px solid #2563eb;
+            padding: 15px 20px;
+            margin: 25px 0;
+            border-radius: 10px;
+            font-weight: 500;
+            color: #1e40af;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/">Home</a> 
+        <a href="{% url 'freedom:submit_post' %}">Share Opinion</a>
+        <a href="{% url 'freedom:all_freedom_posts' %}">View Public Opinions</a>
+        <a href="{% url 'freedom:my_freedom_posts' %}">My Posts</a>
+    </nav>
+
+    <div class="container">
+        <h1>Freedom Forum – Voice of the People 🇮🇳</h1>
+
+        <div class="highlight">
+            “When the people speak, democracy breathes. Let your words inspire the change India deserves.”
+        </div>
+
+        <p>This section empowers citizens to <strong>share their thoughts, raise issues,</strong> and <strong>stand united against injustice.</strong></p>
+        <p>Whether it’s corruption, inequality, or community challenges — your voice matters.  
+           Let’s use this platform to spark change and protect democracy together.</p>
+
+        <a href="{% url 'freedom:submit_post' %}" class="btn">✍️ Share Your Opinion</a>
+        <a href="{% url 'freedom:all_freedom_posts' %}" class="btn">💬 View Discussions</a>
+    </div>
+
+    <footer>
+        © 2025 Swarajya | Freedom of Speech, Unity of Thought ✨
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head><title>My Rape Reports</title></head>
+<body>
+<h2>My Rape Reports</h2>
+{% for report in reports %}
+    <div style="border:1px solid black; padding:10px; margin:10px;">
+        <strong>{{ report.title }}</strong><br>
+        {{ report.description }}<br>
+        Location: {{ report.location }}<br>
+        Date: {{ report.date_of_incident }}<br>
+        Submitted: {{ report.submitted_at }}<br>
+        {% if report.image %}
+            <img src="{{ report.image.url }}" width="150">
+        {% endif %}
+    </div>
+{% endfor %}
+<a href="{% url 'index' %}">Back to Home</a>
+</body>
+</html>

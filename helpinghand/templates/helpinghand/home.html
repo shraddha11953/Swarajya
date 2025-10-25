@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helping Hand - Swarajya</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e6ffed, #f8fff9);
+            color: #222;
+            padding: 0;
+        }
+
+        /* Navbar */
+        nav {
+            background: #14532d;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 18px;
+            font-weight: 600;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        nav a:hover {
+            color: #b9fbc0;
+            text-shadow: 0 0 10px #b9fbc0;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 80px auto;
+            background: #ffffff;
+            padding: 45px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        .container h1 {
+            color: #14532d;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+
+        .container p {
+            color: #333;
+            font-size: 1.1em;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        /* Quote / Message Box */
+        .highlight {
+            background: #dcfce7;
+            border-left: 5px solid #16a34a;
+            padding: 18px 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+            color: #065f46;
+            font-weight: 500;
+            font-size: 1.05em;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #15803d, #16a34a);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            margin: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: linear-gradient(90deg, #16a34a, #15803d);
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #f0fdf4;
+            color: #333;
+            font-size: 0.9em;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="{% url 'helpinghand:submit_offer' %}">Offer Help</a>
+        <a href="{% url 'helpinghand:submit_request' %}">Request Help</a>
+        <a href="{% url 'helpinghand:view_offers' %}">View Offers</a>
+        <a href="{% url 'helpinghand:view_requests' %}">View Requests</a>
+    </nav>
+
+    <div class="container">
+        <h1>Helping Hand 🤝 – Together We Rise</h1>
+
+        <div class="highlight">
+            “No one has ever become poor by giving.  
+             Let’s make kindness our nation’s strength.”
+        </div>
+
+        <p>Here, citizens can <strong>offer help</strong> or <strong>request support</strong> for essentials like food, clothes, education, or shelter.</p>
+        <p>Our mission is to build a community of compassion — connecting hearts that care with lives that need hope.  
+        Even a small act of help can create a ripple of happiness 💚.</p>
+
+        <a href="{% url 'helpinghand:submit_offer' %}" class="btn">Offer Help</a>
+        <a href="{% url 'helpinghand:submit_request' %}" class="btn">Request Help</a>
+    </div>
+
+    <footer>
+        © 2025 Swarajya | Helping Hearts, Healing Lives 🌿
+    </footer>
+
+</body>
+</html>

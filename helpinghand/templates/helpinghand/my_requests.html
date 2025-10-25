@@ -1,0 +1,22 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Help Requests</title>
+</head>
+<body>
+    <h2>My Help Requests</h2>
+    {% for request in requests %}
+        <div style="border: 1px solid gray; padding: 10px; margin-bottom: 10px;">
+            {% if request.image %}
+                <img src="{{ request.image.url }}" width="200"><br>
+            {% endif %}
+            Location: {{ request.location }}<br>
+            Description: {{ request.description }}<br>
+            Submitted: {{ request.created_at }}
+        </div>
+    {% empty %}
+        <p>You haven't submitted any requests yet.</p>
+    {% endfor %}
+</body>
+</html>

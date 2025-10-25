@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+</head>
+<body>
+    
+    
+
+    <div id="nav">
+        <div class="nav-title">स्वराज्य </div>
+        <ul>
+            <a href="{% url 'login' %}"></a>
+            <li><a href="{% url 'corruption:index' %}">Corruption</a></li>
+                <li><a href="{% url 'rape:home' %}">Rape</a></li>
+                <li><a href="{% url 'helpinghand:home' %}">Helping Hand</a></li>
+                <li><a href="{% url 'freedom:home' %}">Freedom</a></li>
+                <li>About-us</li>
+                <li>Contact us</li>
+        </ul>
+    </div>
+
+    <marquee behavior="scroll" direction="left">स्वराज्य म्हणजे  जनतेचे राज्य जे अन्याय आणि अत्याचारापासून मुक्त असेल</marquee>
+     <div id="top-section">
+        <div class="left-col">
+            <img src="{% static 'images/bsh.jpg' %}"  class="side-img">
+            <img src="{% static 'images/fr.jpg' %}"  class="side-img">
+        </div>
+
+        <div class="center-img">
+            
+            <marquee behavior="scroll" direction="left"> welcome in swarajaya</marquee>
+            
+            <img src="{% static 'images/s1.jpg' %}" >
+        </div>
+
+        <div class="right-col">
+            <img src="{% static 'images/hh.jpg' %}"  class="side-img">
+            <img src="{% static 'images/rap.jpg' %}"  class="side-img">
+        </div>
+    </div>
+
+    <!--<div id="S">
+        
+    </div> -->
+    <div id="footer">
+    <p>&copy; 2025 Swarajya. All rights reserved.</p>
+</div>
+
+
+
+</body>
+</html>

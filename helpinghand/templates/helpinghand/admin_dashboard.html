@@ -1,0 +1,23 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Helping Hand Admin Dashboard</title>
+</head>
+<body>
+    <h2>Admin Dashboard - All Offers</h2>
+    {% for offer in offers %}
+        <p><strong>{{ offer.user.username }}</strong>: {{ offer.help_type }} - {{ offer.description }}</p>
+    {% endfor %}
+
+    <h2>Admin Dashboard - All Requests</h2>
+    {% for request in requests %}
+        <p>
+            <strong>{{ request.user.username }}</strong>: {{ request.location }} - {{ request.description }}<br>
+            {% if request.image %}
+                <img src="{{ request.image.url }}" width="150">
+            {% endif %}
+        </p>
+    {% endfor %}
+</body>
+</html>

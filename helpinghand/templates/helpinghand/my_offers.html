@@ -1,0 +1,19 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Help Offers</title>
+</head>
+<body>
+    <h2>My Help Offers</h2>
+    {% for offer in offers %}
+        <div style="border: 1px solid gray; padding: 10px; margin-bottom: 10px;">
+            Help Type: {{ offer.help_type }}<br>
+            Description: {{ offer.description }}<br>
+            Submitted: {{ offer.created_at }}
+        </div>
+    {% empty %}
+        <p>You haven't submitted any offers yet.</p>
+    {% endfor %}
+</body>
+</html>

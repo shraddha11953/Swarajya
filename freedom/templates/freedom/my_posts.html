@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Opinions</title>
+</head>
+<body>
+    <h2>My Freedom Posts</h2>
+    {% for post in posts %}
+        <div style="border:1px solid #000; margin:10px; padding:10px;">
+            <strong>Category:</strong> {{ post.category }}<br>
+            <strong>Content:</strong> {{ post.content }}<br>
+            <strong>Anonymous:</strong> {{ post.is_anonymous }}<br>
+            <strong>Posted On:</strong> {{ post.created_at }}<br>
+
+            <!-- ✅ Delete button placed inside the loop -->
+            <a href="{% url 'freedom:delete_post' post.pk %}" onclick="return confirm('Are you sure you want to delete this post?')">Delete</a>
+        </div>
+    {% empty %}
+        <p>No posts yet.</p>
+    {% endfor %}
+</body>
+</html>

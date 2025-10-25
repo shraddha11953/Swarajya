@@ -1,0 +1,26 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Swarajya</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <nav>
+        <a href="{% url 'index' %}">Home</a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'submit_report' %}">Report Corruption</a>
+            <a href="{% url 'my_reports' %}">My Reports</a>
+            <span>Welcome, {{ user.username }}</span>
+            <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'register' %}">Register</a>
+        {% endif %}
+
+    </nav>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

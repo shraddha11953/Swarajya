@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corruption Reporting - Swarajya</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f0f4ff, #e2e9ff);
+            color: #222;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Navbar */
+        nav {
+            background: #1e3a8a;  /* dark blue */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+            text-shadow: 0 0 10px #ffd700;
+        }
+
+        /* Main section */
+        .container {
+            max-width: 900px;
+            margin: 60px auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            padding: 40px;
+            text-align: center;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        .container h2 {
+            font-size: 2.2em;
+            color: #1e3a8a;
+            margin-bottom: 15px;
+        }
+
+        .container p {
+            font-size: 1.1em;
+            color: #444;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .features {
+            text-align: left;
+            margin-top: 30px;
+        }
+
+        .features ul {
+            list-style: none;
+        }
+
+        .features li {
+            background: #e0e7ff;
+            margin: 10px 0;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 1em;
+            color: #1e3a8a;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .features li:hover {
+            background: #c7d2fe;
+            transform: scale(1.03);
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #555;
+            font-size: 0.9em;
+            background: #f8fafc;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="{% url 'corruption:submit_report' %}">Report Corruption</a>
+        <a href="{% url 'corruption:my_reports' %}">My Reports</a>
+        {% if user.is_superuser %}
+        <a href="{% url 'corruption:all_reports' %}">All Reports</a>
+        {% endif %}
+    </nav>
+
+    <div class="container">
+        <h2>Corruption Reporting System</h2>
+        <p>Stand against injustice! Report any form of corruption you’ve witnessed — from bribery to misuse of funds. Your report stays confidential, and together we can make India a transparent nation.</p>
+
+        <div class="features">
+            <h3>What You Can Do Here:</h3>
+            <ul>
+                <li>📝 Submit a corruption report anonymously or with your identity</li>
+                <li>📁 View and track your submitted reports</li>
+                <li>🔒 Admin can review, verify, and take action on all reports</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 Swarajya | Together for a corruption-free India 🇮🇳
+    </footer>
+
+</body>
+</html>

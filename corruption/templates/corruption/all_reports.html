@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<h2>All Submitted Corruption Reports</h2>
+<ul>
+  {% for report in reports %}
+    <li><strong>{{ report.title }}</strong> by {{ report.user.username }} on {{ report.date }}</li>
+  {% empty %}
+    <li>No reports yet.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

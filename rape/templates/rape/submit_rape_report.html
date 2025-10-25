@@ -1,0 +1,14 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head><title>Submit Rape Report</title></head>
+<body>
+<h2>Submit Rape Report</h2>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+<a href="{% url 'index' %}">Back to Home</a>
+</body>
+</html>

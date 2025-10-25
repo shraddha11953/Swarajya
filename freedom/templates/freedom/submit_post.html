@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Opinion</title>
+</head>
+<body>
+    <h2>Submit Your Opinion</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+    <a href="{% url 'freedom:my_freedom_posts' %}">My Opinions</a> |
+    <a href="{% url 'freedom:all_freedom_posts' %}">View All Opinions</a>
+</body>
+</html>

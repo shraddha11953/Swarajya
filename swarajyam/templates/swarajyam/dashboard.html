@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        body {
+            background-image: url("{% static 'images/bg-dashboard.jpg' %}");
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div><strong>स्वराज्य</strong></div>
+        <div>
+            <a href="/corruption/">Corruption</a>
+            <a href="/rape/">Rape</a>
+            <a href="/helping-hand/">Helping-Hand</a>
+            <a href="/freedom/">Freedom</a>
+            <a href="/about-us/">About Us</a>
+            <a href="/contact/">Contact</a>
+            <a href="{% url 'logout' %}">Logout</a>
+        </div>
+    </div>
+
+    <div class="dashboard">
+        <div class="sidebar">
+            <h3>Welcome, {{ user.username }}</h3>
+            <ul>
+                <li><a href="/profile/">My Profile</a></li>
+                <li><a href="/reports/">My Reports</a></li>
+                <li><a href="/messages/">Messages</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <h2>Dashboard</h2>
+            <p>Welcome to Swarajya – Raise your voice against injustice.</p>
+        </div>
+    </div>
+</body>
+</html>

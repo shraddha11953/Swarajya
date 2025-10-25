@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Public Opinions</title>
+</head>
+<body>
+    <form method="get" style="margin-bottom: 15px;">
+        <label for="category">Filter by Category:</label>
+        <select name="category" onchange="this.form.submit()">
+            <option value="">All</option>
+            {% for cat in categories %}
+                <option value="{{ cat }}" {% if selected_category == cat %}selected{% endif %}>{{ cat }}</option>
+            {% endfor %}
+        </select>
+    </form>
+
+    <h2>Public Opinions</h2>
+    {% for post in posts %}
+        <div style="border:1px solid gray; margin:10px; padding:10px;">
+            <strong>Category:</strong> {{ post.category }}<br>
+            <strong>Posted By:</strong> {{ post.display_user }}<br>
+            <strong>Content:</strong> {{ post.content }}<br>
+            <strong>Posted On:</strong> {{ post.created_at }}<br>
+
+            <!-- ✅ Support info inside the loop -->
+            <strong>Supports:</strong> {{ post.support }}<br>
+            <a href="{% url 'freedom:upvote_post' post.pk %}">Support this</a>
+        </div>
+    {% empty %}
+        <p>No public posts yet.</p>
+    {% endfor %}
+</body>
+</html>

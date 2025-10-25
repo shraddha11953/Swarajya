@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin View – All Opinions</title>
+</head>
+<body>
+    <h2>All Submitted Posts (Admin View)</h2>
+    {% for post in posts %}
+        <div style="border:2px solid red; margin:10px; padding:10px;">
+            <strong>User:</strong> {{ post.user.username }}<br>
+            <strong>Anonymous:</strong> {{ post.is_anonymous }}<br>
+            <strong>Category:</strong> {{ post.category }}<br>
+            <strong>Content:</strong> {{ post.content }}<br>
+            <strong>Submitted At:</strong> {{ post.created_at }}
+        </div>
+    {% empty %}
+        <p>No posts yet.</p>
+    {% endfor %}
+</body>
+</html>
