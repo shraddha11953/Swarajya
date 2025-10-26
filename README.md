@@ -3,7 +3,7 @@
 
 Swarajya is a Django-based social impact web platform designed to empower citizens to take action against social issues like corruption, rape/harassment, and poverty.
 It connects people who want to help with those in need and provides a safe space for victims to raise their voices without fear.
-
+____
 🚀 Features
 🧑‍⚖️ Corruption Reporting
 
@@ -80,7 +80,8 @@ Open your browser and visit
 👉 http://127.0.0.1:8000/
 
 📸 Screenshots
-🏠 Home Page
+🏠**Home Page:**  
+![Home](core/static/images/home.png)
 
 💰 Corruption Section
 
