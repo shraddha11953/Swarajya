@@ -84,6 +84,7 @@ Open your browser and visit
 ![Home](screenshots/home_page.png)
 
 💰 Corruption Section
+![corruption](screenshots/corruption.png)
 
 💔 Rape Reporting
 
