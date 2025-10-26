@@ -86,9 +86,16 @@ Open your browser and visit
 💰 Corruption Section
 ![corruption](screenshots/corruption.png)
 
+🗣️ Freedom Forum
+![freedom](screenshots/Freedom.png)
+
+
 💔 Rape Reporting
+![Rape_Harassment](screenshots/Rape_Harassment.png)
 
 🤝 Helping Hand
+![Helping_Hand](screenshots/Helping_Hand.png)
+
 
 👩‍💻 Author
 
