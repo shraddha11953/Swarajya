@@ -81,7 +81,7 @@ Open your browser and visit
 
 📸 Screenshots
 🏠**Home Page:**  
-![Home](core/static/images/home.png)
+![Home](screenshots/home_page.png)
 
 💰 Corruption Section
 
